@@ -9,17 +9,14 @@ vector<string> solution(string my_string) {
     
     for (int i = 0; i < my_string.length(); i++)
     {
-        if (my_string[i] == ' ')
-        {
-            if (temp_string != "")
-            {
-                answer.push_back(temp_string);            
-                temp_string = "";
-            }
+        if (my_string[i] != ' ')
+        { 
+            temp_string += my_string[i];
         }
         else
         {
-            temp_string += my_string[i];
+            answer.push_back(temp_string);            
+            temp_string = "";
         }
     }
     if (temp_string != "")
